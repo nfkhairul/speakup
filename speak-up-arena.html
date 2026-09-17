@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Speak Up Arena: SPM Paper 3 Speaking Lesson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lilita+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EAF1E7; --surface:#FFFFFF; --surface-2:#DCE8D8; --ink:#13291F; --ink-2:#3F5A4C; --ink-3:#6E8479; --line:#C5D6C2;
+  --primary:#1D5E43; --primary-2:#0F3C2A; --on-primary:#FFF6D6;
+  --hi:#FFC531; --hi-soft:#FFF0C2; --good:#1E9A58; --good-2:#136B3C; --bad:#D33D3D;
+  --t0:#EE7B1E; --t0-soft:#FDE7D3; --t0-ink:#A9510B;
+  --t1:#D23C55; --t1-soft:#FADDE2; --t1-ink:#A0243A;
+  --t2:#3A6FD8; --t2-soft:#DCE6FA; --t2-ink:#244FA6;
+  --on-tc:#FFFFFF; --glow:rgba(255,197,49,.22);
+  --font-display:"Lilita One","Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Atkinson Hyperlegible","Helvetica Neue",Arial,system-ui,sans-serif;
+  --r:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1D16; --surface:#162A21; --surface-2:#1F372C; --ink:#EAF3EC; --ink-2:#B3C7BB; --ink-3:#7F968A; --line:#2E4A3D;
+    --primary:#FFC531; --primary-2:#B98A10; --on-primary:#13291F;
+    --hi:#FFC531; --hi-soft:#3A3312; --good:#3CCB7F; --good-2:#1F7F4B; --bad:#FF6B6B;
+    --t0:#FF9A45; --t0-soft:#3A2515; --t0-ink:#FFB57A;
+    --t1:#FF6B85; --t1-soft:#3E1C25; --t1-ink:#FF9BAE;
+    --t2:#6E9BFF; --t2-soft:#1B2A4D; --t2-ink:#9DBBFF;
+    --on-tc:#0E1D16; --glow:rgba(255,197,49,.10);
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#0E1D16; --surface:#162A21; --surface-2:#1F372C; --ink:#EAF3EC; --ink-2:#B3C7BB; --ink-3:#7F968A; --line:#2E4A3D;
+    --primary:#FFC531; --primary-2:#B98A10; --on-primary:#13291F;
+    --hi:#FFC531; --hi-soft:#3A3312; --good:#3CCB7F; --good-2:#1F7F4B; --bad:#FF6B6B;
+    --t0:#FF9A45; --t0-soft:#3A2515; --t0-ink:#FFB57A;
+    --t1:#FF6B85; --t1-soft:#3E1C25; --t1-ink:#FF9BAE;
+    --t2:#6E9BFF; --t2-soft:#1B2A4D; --t2-ink:#9DBBFF;
+    --on-tc:#0E1D16; --glow:rgba(255,197,49,.10);
+}
+.team-0{--tc:var(--t0);--tc-soft:var(--t0-soft);--tc-ink:var(--t0-ink)}
+.team-1{--tc:var(--t1);--tc-soft:var(--t1-soft);--tc-ink:var(--t1-ink)}
+.team-2{--tc:var(--t2);--tc-soft:var(--t2-soft);--tc-ink:var(--t2-ink)}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.4;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;-webkit-user-select:none;user-select:none;overflow:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(1100px 480px at 50% -12%,var(--glow),transparent 70%)}
+input{-webkit-user-select:text;user-select:text}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+button:disabled{opacity:.45;cursor:default}
+:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.d{font-family:var(--font-display);font-weight:400}
+
+#app{position:relative;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;height:100vh;height:100dvh}
+
+/* Top bar */
+.topbar{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--surface);border-bottom:2px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;white-space:nowrap}
+.mark{width:38px;height:38px;border-radius:11px;background:var(--primary);display:grid;place-items:center;font-size:19px;transform:rotate(-6deg)}
+.brand .name{font-family:var(--font-display);font-size:22px;line-height:1;color:var(--ink)}
+.brand .sub{display:block;font-size:12px;font-weight:700;color:var(--ink-3);margin-top:2px}
+.pills{display:flex;gap:6px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none;padding:2px}
+.pills::-webkit-scrollbar{display:none}
+.pill{display:flex;align-items:center;gap:6px;padding:8px 12px;min-height:40px;border-radius:999px;background:var(--surface-2);color:var(--ink-2);font-weight:700;font-size:14px;white-space:nowrap}
+.pill.done span::after{content:" ✓";color:var(--good)}
+.pill.on{background:var(--primary);color:var(--on-primary)}
+.clock{font-variant-numeric:tabular-nums;font-weight:700;font-size:14px;padding:8px 11px;border-radius:10px;background:var(--surface-2);white-space:nowrap;min-height:40px}
+.clock.behind{background:var(--hi);color:#13291F}
+.ib{width:40px;height:40px;border-radius:10px;background:var(--surface-2);display:grid;place-items:center;font-size:17px;flex-shrink:0}
+
+/* Main stage */
+main{overflow-y:auto;padding:14px 22px 16px;-webkit-overflow-scrolling:touch;position:relative}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:14px}
+.kicker{font-weight:700;font-size:15px;color:var(--primary)}
+:root[data-theme="dark"] .kicker{color:var(--hi)}
+.kicker span{color:var(--ink-3);font-weight:700}
+h1{font-family:var(--font-display);font-weight:400;font-size:clamp(30px,3.6vw,46px);line-height:1;margin:3px 0 0;letter-spacing:.005em}
+.stepnav{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.dots{display:flex;gap:4px;margin-right:4px}
+.dot{width:26px;height:26px;display:grid;place-items:center}
+.dot::before{content:"";width:12px;height:12px;border-radius:6px;background:var(--line);transition:width .2s}
+.dot.on::before{width:24px;background:var(--primary)}
+
+/* Buttons */
+.btn{--bs:var(--line);display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:10px 18px;border-radius:14px;
+  font-weight:700;font-size:17px;background:var(--surface);color:var(--ink);border:2px solid var(--bs);box-shadow:0 4px 0 var(--bs);
+  margin-bottom:4px;transition:transform .06s,box-shadow .06s;text-align:center;line-height:1.15}
+.btn:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 var(--bs)}
+.btn.primary{--bs:var(--primary-2);background:var(--primary);color:var(--on-primary)}
+.btn.good{--bs:var(--good-2);background:var(--good);color:#fff}
+.btn.danger{color:var(--bad)}
+.btn.big{min-height:62px;font-size:21px;padding:12px 24px}
+.btn.huge{min-height:88px;font-size:32px;padding:16px 44px;border-radius:22px;font-family:var(--font-display);font-weight:400}
+.btn.teamc{--bs:var(--tc);background:var(--tc-soft);color:var(--ink)}
+.link{color:var(--ink-3);font-weight:700;padding:8px 0;text-decoration:underline;text-underline-offset:3px}
+
+/* Shared bits */
+.panel{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.panel.hi{border-color:var(--hi)}
+.lbl{font-size:14px;font-weight:700;color:var(--ink-3);margin-bottom:6px}
+.tip{margin-top:14px;padding:12px 16px;border-radius:14px;background:var(--surface-2);font-size:clamp(16px,1.6vw,20px);font-weight:700}
+.tip.hi{background:var(--hi-soft)}
+.blank{display:inline-block;min-width:90px;height:.9em;border-bottom:4px dotted var(--primary);margin:0 4px;vertical-align:baseline}
+:root[data-theme="dark"] .blank{border-color:var(--hi)}
+.blank.long{min-width:200px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.between{justify-content:space-between}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.muted{color:var(--ink-3)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:var(--surface-2);font-weight:700;font-size:16px;border:2px solid transparent}
+.stars{color:var(--hi);font-size:24px;letter-spacing:2px;font-weight:700;line-height:1}
+.stars span{color:var(--line)}
+.pop{animation:pop .38s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
+
+/* Setup */
+.note{margin:0 0 12px;padding:10px 14px;border-radius:12px;background:var(--hi-soft);font-weight:700}
+.teams-setup{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tsetup{background:var(--surface);border:2px solid var(--line);border-top:8px solid var(--tc);border-radius:var(--r);padding:12px}
+.tsetup-head{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.emoji-btn{font-size:28px;width:54px;height:54px;border-radius:12px;background:var(--tc-soft);flex-shrink:0}
+.tname,.mrow input{min-width:0;flex:1;padding:10px 12px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:17px}
+.tname{font-family:var(--font-display);font-size:24px;padding:8px 12px}
+.mrow{display:flex;gap:6px;align-items:center;margin-top:6px}
+.seg{display:flex;border:2px solid var(--line);border-radius:10px;overflow:hidden;flex-shrink:0}
+.seg button{min-width:42px;min-height:42px;padding:0 6px;font-size:13px;color:var(--ink-3);letter-spacing:-1px}
+.seg button + button{border-left:2px solid var(--line)}
+.seg button.on{background:var(--tc);color:var(--on-tc)}
+.balance{font-size:14px;margin-top:8px;font-weight:700}
+.balance.ok{color:var(--good)} .balance.no{color:var(--ink-3)}
+.setup-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:14px}
+.grow{flex:1}
+.switch{display:flex;align-items:center;gap:8px;font-weight:700}
+.switch input{width:24px;height:24px;accent-color:var(--good)}
+.timeline{display:flex;gap:4px;border-radius:12px;overflow:hidden}
+.tl{flex-basis:0;min-width:62px;padding:8px 10px;background:var(--surface);font-size:13px;font-weight:700;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--ink-2)}
+.tl b{display:block;font-family:var(--font-display);font-weight:400;font-size:18px;color:var(--ink)}
+
+/* Warm-up */
+.rule{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:20px;text-align:center}
+.rule .e{font-size:58px;line-height:1.1}
+.rule .t{font-family:var(--font-display);font-size:32px}
+.rule p{margin:4px 0 0;font-size:20px;color:var(--ink-2);font-weight:700}
+.frame-card{margin-top:14px;padding:16px 22px;border-radius:var(--r);background:var(--surface);border:3px dashed var(--primary)}
+:root[data-theme="dark"] .frame-card{border-color:var(--hi)}
+.frame{font-weight:700;font-size:clamp(22px,2.7vw,34px);line-height:1.35}
+.frame-card.sm{margin-top:0;padding:10px 16px}
+.frame-card.sm .frame{font-size:clamp(18px,2vw,24px)}
+.wyr{background:var(--surface);border:2px solid var(--line);border-radius:24px;padding:16px 20px;margin-bottom:14px}
+.wyr-q{font-family:var(--font-display);font-size:clamp(26px,2.8vw,36px);color:var(--ink-2);text-align:center}
+.wyr-row{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch;margin-top:10px}
+.opt{display:grid;place-items:center;text-align:center;padding:22px;border-radius:20px;font-weight:700;font-size:clamp(28px,3.6vw,48px);line-height:1.1;min-height:clamp(150px,27vh,250px);background:var(--tc-soft);border:3px solid var(--tc)}
+.or{align-self:center;width:76px;height:76px;border-radius:50%;background:var(--hi);color:#13291F;display:grid;place-items:center;font-family:var(--font-display);font-size:28px;transform:rotate(-8deg)}
+
+/* A-R-E */
+.are{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+.are-card{border-radius:22px;padding:18px;background:var(--tc-soft);border:3px solid var(--tc);display:flex;flex-direction:column;gap:4px}
+.are-card .big{font-family:var(--font-display);font-size:clamp(60px,8vw,104px);line-height:.9;color:var(--tc-ink)}
+.are-card .nm{font-family:var(--font-display);font-size:32px}
+.are-card .ex{font-size:clamp(18px,1.9vw,24px);font-weight:700;color:var(--ink-2)}
+.arrow{align-self:center;font-size:36px;color:var(--ink-3)}
+.are-demo{margin-top:14px;padding:16px 20px;border-radius:var(--r);background:var(--surface);border:2px solid var(--line);font-size:clamp(20px,2.4vw,30px);font-weight:700;line-height:1.35}
+.are-demo .team-0,.are-demo .team-1,.are-demo .team-2{color:var(--tc-ink)}
+
+/* Speed chatting */
+.how{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.lines{display:flex;flex-direction:column;gap:18px;padding:20px;background:var(--surface);border-radius:var(--r);border:2px solid var(--line);overflow:hidden}
+.seats{display:flex;gap:10px}
+.seat{width:clamp(36px,4.2vw,54px);aspect-ratio:1;border-radius:50%;background:var(--tc-soft);border:3px solid var(--tc);flex-shrink:0}
+.line.b .seats{animation:shift 2.6s ease-in-out infinite}
+@keyframes shift{0%,35%{transform:none}65%,100%{transform:translateX(calc(clamp(36px,4.2vw,54px) + 10px))}}
+.steps-list{font-size:clamp(19px,2.1vw,27px);font-weight:700;line-height:1.3;padding-left:1.3em;margin:0}
+.steps-list li{margin:8px 0}
+.two{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px;align-items:start}
+.rot{font-weight:700;font-size:18px;color:var(--ink-2)}
+.rot b{font-family:var(--font-display);font-weight:400;font-size:44px;color:var(--ink)}
+.qcard{margin:6px 0 16px;padding:24px 28px;border-radius:24px;background:var(--surface);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--hi);font-weight:700;font-size:clamp(28px,3.6vw,48px);line-height:1.12}
+.banned div{font-size:18px;padding:4px 0;font-weight:700}
+.banned s{color:var(--bad);text-decoration-thickness:3px}
+
+/* Long turn */
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.fcard{position:relative;background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:16px}
+.fcard:not(:last-child)::after{content:"➜";position:absolute;right:-15px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--ink-3);z-index:1}
+.fcard .e{font-size:40px;line-height:1.1}
+.fcard .t{font-family:var(--font-display);font-size:26px;line-height:1.05;margin-top:4px}
+.fcard .x{color:var(--ink-2);font-weight:700;margin-top:4px}
+.fcard .s{margin-top:10px;padding:8px 10px;border-radius:10px;background:var(--hi-soft);font-weight:700;font-size:17px}
+.linkers{display:flex;flex-wrap:wrap;gap:8px}
+.linkers .chip{font-size:clamp(18px,2vw,24px);background:var(--surface);border-color:var(--primary)}
+.draw3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.drawcard{min-height:clamp(250px,42vh,350px);border-radius:22px;padding:16px 18px;border:3px solid var(--tc);background:var(--surface);display:flex;flex-direction:column}
+.drawcard.closed{background:repeating-linear-gradient(45deg,var(--tc-soft) 0 16px,var(--surface) 16px 32px);align-items:center;justify-content:center;gap:14px}
+.drawcard.flip{animation:flip .45s ease-out}
+@keyframes flip{from{transform:rotateY(80deg);opacity:.2}to{transform:none;opacity:1}}
+.tlabel{font-weight:700;font-size:18px;color:var(--tc-ink)}
+.drawcard.closed .tlabel{font-family:var(--font-display);font-weight:400;font-size:30px;color:var(--ink);background:var(--surface);padding:2px 12px;border-radius:10px}
+.ttitle{font-family:var(--font-display);font-size:clamp(24px,2.6vw,32px);line-height:1.05;margin:6px 0 10px}
+.tpoints{margin:0;padding-left:1.1em;font-size:19px;font-weight:700}
+.tpoints li{margin:3px 0}
+.drawcard .link{margin-top:auto;align-self:flex-start}
+
+/* Speaker picker */
+.picker{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pick-row{display:flex;flex-wrap:wrap;gap:8px}
+.pick-row .btn{min-height:52px;font-size:17px;padding:8px 14px}
+.pick-row small{font-weight:700;color:var(--ink-2);font-size:13px}
+.spk{border-radius:24px;padding:18px 22px;background:var(--surface);border:3px solid var(--tc,var(--line));min-height:clamp(230px,38vh,330px);display:flex;flex-direction:column;gap:8px}
+.spk.empty{align-items:center;justify-content:center;color:var(--ink-3);font-weight:700;font-size:21px;border-style:dashed;text-align:center}
+.spk-emoji{font-size:58px;line-height:1}
+.spk-team{font-weight:700;color:var(--tc-ink);font-size:19px}
+.spk-name{font-family:var(--font-display);font-size:clamp(44px,5.8vw,78px);line-height:.95;word-break:break-word}
+.spk-target{font-size:clamp(19px,2vw,25px);font-weight:700;line-height:1.3;color:var(--ink-2)}
+.spk-target b{color:var(--ink)}
+.spk .row{margin-top:auto}
+.check{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.check button{width:100%;text-align:left;display:flex;gap:10px;align-items:center;padding:6px 12px;border-radius:12px;background:var(--surface-2);font-weight:700;font-size:17px;min-height:42px}
+.bx{width:28px;height:28px;border-radius:8px;border:3px solid var(--ink-3);display:grid;place-items:center;font-size:16px;flex-shrink:0;background:var(--surface)}
+.check button.on .bx{background:var(--good);border-color:var(--good);color:#fff}
+.tmini{border-color:var(--tc)}
+.tmini .ttitle{font-size:24px;margin:2px 0 6px}
+.tmini .tpoints{font-size:17px}
+
+/* Break */
+.stand{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;padding-top:3vh}
+.stand-kick{font-family:var(--font-display);font-size:clamp(30px,3.2vw,42px);color:var(--ink-2)}
+.stand-q{font-family:var(--font-display);font-size:clamp(46px,6.6vw,90px);line-height:1;max-width:16ch}
+.stand-n{font-weight:700;color:var(--ink-3)}
+
+/* Discussion */
+.pbank{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.pgroup{border-radius:20px;padding:14px;background:var(--surface);border:2px solid var(--line);border-top:10px solid var(--pc)}
+.pgroup .pi{font-size:36px;line-height:1.1}
+.pgroup .pk{font-family:var(--font-display);font-size:23px;line-height:1.05;margin:4px 0 8px}
+.pgroup .pp{padding:8px 10px;border-radius:10px;background:var(--surface-2);font-weight:700;font-size:17px;margin-top:6px;line-height:1.25}
+.serve{font-family:var(--font-display);font-size:26px;color:var(--good)}
+.vs{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.vs .pn{font-family:var(--font-display);font-size:28px;padding:4px 14px;border-radius:12px;background:var(--tc-soft);border:2px solid var(--tc)}
+.vs i{font-style:normal;font-family:var(--font-display);font-size:20px;padding:4px 10px;border-radius:10px;background:var(--hi);color:#13291F}
+.rally{display:flex;align-items:center;gap:12px;margin:10px 0;flex-wrap:wrap}
+.rally-n{font-family:var(--font-display);font-size:68px;line-height:1;min-width:1.3ch;color:var(--good);text-align:center}
+.rally-l{font-weight:700;color:var(--ink-2);margin-right:8px}
+.mp{padding:9px 12px;border-radius:12px;background:var(--surface);border:2px solid var(--line);border-left:8px solid var(--pc)}
+.mp b{display:block;font-size:14px;color:var(--ink-3)}
+.mp span{font-weight:700;font-size:18px}
+.sit{padding:12px 16px;border-radius:14px;background:var(--surface-2);font-size:clamp(17px,1.8vw,22px);font-weight:700;margin-bottom:10px}
+.mm{position:relative;height:clamp(250px,40vh,390px);background:var(--surface);border:2px solid var(--line);border-radius:22px;margin-bottom:10px}
+.mm svg{position:absolute;inset:0;width:100%;height:100%}
+.mm line{stroke:var(--ink-3);stroke-width:3;stroke-dasharray:2 8;stroke-linecap:round}
+.mm-center{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:34%;padding:16px 18px;border-radius:40px;background:var(--primary);color:var(--on-primary);text-align:center;font-weight:700;font-size:clamp(17px,1.9vw,24px);line-height:1.2}
+.mm-opt{position:absolute;transform:translate(-50%,-50%);max-width:30%;padding:10px 16px;border-radius:16px;background:var(--tc-soft);border:3px solid var(--tc);font-weight:700;font-size:clamp(17px,2.1vw,27px);line-height:1.1;text-align:center}
+.fish-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start;margin-bottom:14px}
+.optchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.minisit .q{font-weight:700;font-size:20px}
+.crit{background:var(--surface);border:2px solid var(--line);border-radius:22px;padding:18px;text-align:center}
+.crit-e{font-size:50px;line-height:1.1}
+.crit-t{font-family:var(--font-display);font-size:clamp(24px,2.6vw,32px);line-height:1.05}
+.crit-d{color:var(--ink-2);font-size:18px;font-weight:700;margin:6px 0 12px}
+.hands{display:flex;justify-content:center;gap:6px}
+.hands span{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);font-family:var(--font-display);font-size:22px}
+
+/* Just a Minute */
+.jam-tier{text-align:center;padding:16px;border-radius:22px;background:var(--surface);border:2px solid var(--line)}
+.jam-secs{font-family:var(--font-display);font-size:clamp(60px,7.5vw,100px);line-height:1}
+.jam-secs small{font-size:.4em}
+.jam-tier .x{font-weight:700;color:var(--ink-2);font-size:18px}
+.rules-list{font-size:clamp(18px,2vw,24px);font-weight:700;margin:14px 0 0;padding-left:1.3em;line-height:1.3}
+.rules-list li{margin:6px 0}
+.jam-topic{display:flex;flex-direction:column;gap:10px;text-align:center}
+.topic-big{min-height:clamp(130px,22vh,220px);display:grid;place-items:center;padding:16px;border-radius:24px;background:var(--primary);color:var(--on-primary);font-family:var(--font-display);font-size:clamp(36px,4.8vw,66px);line-height:1}
+.topic-big.spin{color:var(--hi)}
+.chal{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;font-weight:700}
+
+/* Wrap-up */
+.exit{display:grid;gap:14px;align-content:start}
+.exit-card{display:flex;gap:18px;align-items:center;padding:20px 22px;border-radius:22px;background:var(--surface);border:2px solid var(--line);font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2}
+.exit-card .n{flex-shrink:0;width:62px;height:62px;border-radius:50%;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;font-family:var(--font-display);font-size:32px}
+.reveal{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;min-height:48vh}
+.drum{font-size:100px;animation:wob .35s infinite alternate}
+@keyframes wob{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
+.winner{text-align:center}
+.crown{font-size:62px;line-height:1}
+.wname{font-family:var(--font-display);font-size:clamp(40px,5.4vw,70px);line-height:1}
+.podium{display:flex;justify-content:center;align-items:flex-end;gap:14px;margin:16px 0 6px}
+.pod{width:clamp(150px,19vw,230px);display:flex;flex-direction:column;align-items:center;gap:2px}
+.pe{font-size:48px;line-height:1.1}
+.pn2{font-family:var(--font-display);font-size:26px}
+.ps{font-family:var(--font-display);font-size:34px;color:var(--tc-ink)}
+.block{width:100%;background:var(--tc);color:var(--on-tc);font-family:var(--font-display);font-size:46px;border-radius:14px 14px 0 0;display:grid;place-items:center;transform-origin:bottom;animation:rise .8s cubic-bezier(.2,1.2,.4,1) both}
+.pod.r1 .block{height:clamp(100px,17vh,170px)}
+.pod.r2 .block{height:clamp(75px,12vh,125px)}
+.pod.r3 .block{height:clamp(50px,8vh,85px)}
+@keyframes rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.thanks{font-size:22px;font-weight:700;color:var(--ink-2);margin:10px 0 0}
+
+/* Dock: scoreboard + timer */
+.dock{display:grid;grid-template-columns:minmax(0,1fr) clamp(250px,25vw,320px);gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--surface);border-top:2px solid var(--line)}
+#teams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:8px}
+.tcard{border-radius:16px;padding:8px 10px;background:var(--tc-soft);border:3px solid transparent;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tcard.all{border-color:var(--good)}
+.tcard.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.tc-top{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.tc-name{font-family:var(--font-display);font-size:21px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tc-score{font-family:var(--font-display);font-size:44px;line-height:.85;color:var(--tc-ink);font-variant-numeric:tabular-nums}
+.tc-score.bump{animation:bump .45s}
+@keyframes bump{50%{transform:scale(1.4)}}
+.mdots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.md{height:34px;padding:0 4px;border-radius:999px;border:2px dashed var(--tc);font-size:13px;font-weight:700;color:var(--ink-2);background:var(--surface);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.md.on{background:var(--tc);border-style:solid;color:var(--on-tc)}
+.tc-bot{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.tc-flag{font-size:13px;font-weight:700;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tcard.all .tc-flag{color:var(--good)}
+.tc-btns{display:flex;gap:5px;flex-shrink:0}
+.pm{width:42px;height:38px;border-radius:11px;background:var(--surface);font-size:24px;font-weight:700;border:2px solid var(--tc);line-height:1}
+.pm.plus{background:var(--tc);color:var(--on-tc)}
+.newround{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0 6px;border-radius:14px;background:var(--surface-2);font-size:24px;font-weight:700;width:64px}
+.newround span{font-size:12px;line-height:1.1;text-align:center}
+#timer{border-radius:16px;background:var(--surface-2);padding:8px 10px;display:flex;flex-direction:column;gap:6px;min-width:0}
+#timer.low{background:var(--bad);color:#fff}
+.tm-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.tm-digits{font-family:var(--font-display);font-size:46px;line-height:1;font-variant-numeric:tabular-nums}
+.tm-ctrl{display:flex;gap:5px}
+.tb{min-width:40px;height:42px;border-radius:11px;background:var(--surface);font-weight:700;font-size:17px;border:2px solid var(--line);color:var(--ink)}
+.tb.main{background:var(--primary);color:var(--on-primary);border-color:var(--primary-2);min-width:52px;font-size:19px}
+.tm-bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.tm-bar i{display:block;height:100%;background:var(--primary);width:100%}
+#timer.low .tm-bar i{background:#fff}
+.tm-presets{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.tm-presets::-webkit-scrollbar{display:none}
+.tm-presets .chip{padding:6px 10px;font-size:14px;white-space:nowrap;background:var(--surface);border-color:var(--line);color:var(--ink);min-height:34px}
+.tm-presets .chip.on{border-color:var(--primary)}
+
+/* Overlays */
+.overlay{position:fixed;inset:0;display:none;place-items:center;z-index:50}
+.overlay.show{display:grid}
+#bigT{background:var(--bg)}
+.bigwrap{display:flex;flex-direction:column;align-items:center;gap:14px;width:min(90vw,1100px)}
+.bigd{font-family:var(--font-display);font-size:min(33vw,58vh);line-height:.9;font-variant-numeric:tabular-nums}
+#bigT.low .bigd{color:var(--bad)}
+.bigbar{width:100%;height:18px;border-radius:9px;background:var(--line);overflow:hidden}
+.bigbar i{display:block;height:100%;background:var(--primary);width:100%}
+.bighint{color:var(--ink-3);font-weight:700}
+#timesup{background:rgba(211,61,61,.94);color:#fff}
+#timesup div{font-family:var(--font-display);font-size:min(15vw,170px);line-height:1}
+#timesup.show div{animation:pop .4s}
+#toast{position:fixed;left:50%;top:auto;bottom:170px;transform:translate(-50%,-16px);opacity:0;transition:.25s;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:14px;font-weight:700;font-size:18px;z-index:60;pointer-events:none;max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:70;width:100%;height:100%}
+
+@media (max-width:1250px){
+  .pill:not(.on) span{display:none}
+  .brand .sub{display:none}
+}
+@media (max-width:900px){
+  body{overflow:auto}
+  #app{height:auto;min-height:100dvh}
+  .two,.how,.fish-top{grid-template-columns:1fr}
+  .grid3,.teams-setup,.draw3{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .pbank{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .are{grid-template-columns:1fr}
+  .are .arrow{transform:rotate(90deg);justify-self:center}
+  .dock{grid-template-columns:1fr;position:sticky;bottom:0}
+  .shead{flex-direction:column;align-items:flex-start}
+  .brand .name{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">🎤</div>
+      <div><span class="name">Speak Up Arena</span><span class="sub">SPM Paper 3 speaking</span></div>
+    </div>
+    <nav class="pills" id="pills" aria-label="Lesson stages"></nav>
+    <button class="clock" id="clock" data-a="clock">Lesson not started</button>
+    <button class="ib" id="muteBtn" data-a="mute" aria-label="Sound on or off">🔊</button>
+    <button class="ib" id="themeBtn" data-a="theme" aria-label="Change colour theme">🌓</button>
+    <button class="ib" data-a="fs" aria-label="Full screen">⛶</button>
+  </header>
+  <main id="main"></main>
+  <footer class="dock">
+    <div id="teams"></div>
+    <div id="timer"></div>
+  </footer>
+</div>
+
+<div id="bigT" class="overlay" data-a="bigClose">
+  <div class="bigwrap">
+    <div class="bigd" id="bigd">0:00</div>
+    <div class="bigbar"><i id="bigb"></i></div>
+    <button class="btn primary big" id="bigToggle" data-a="tToggle">▶ Start</button>
+    <div class="bighint">Tap anywhere else to close</div>
+  </div>
+</div>
+<div id="timesup" class="overlay" data-a="tuClose"><div>Time's up!</div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti"></canvas>
+
+<script>
+(() => {
+'use strict';
+
+/* ---------- Content ---------- */
+const WYR = [
+  ['live in a big city','live in a quiet kampung'],
+  ['be a famous footballer','be a famous singer'],
+  ['have no phone for a week','have no rice for a week'],
+  ['be able to fly','be invisible'],
+  ['eat nasi lemak every day','eat roti canai every day'],
+  ['study late at night','study early in the morning'],
+  ['have a pet tiger','have a pet elephant'],
+  ['go camping in the jungle','stay in a five-star hotel'],
+  ['be the oldest child','be the youngest child'],
+  ['live without music','live without television'],
+  ["read people's minds",'see the future'],
+  ['swim in a river','swim in the sea'],
+  ['work in an office','work outdoors'],
+  ['be great at sports','be great at drawing'],
+  ['travel to Japan','travel to Australia'],
+  ['have a small house near your family','have a big house far away'],
+  ['speak every language in the world','play every musical instrument'],
+  ['be a doctor','be a teacher'],
+  ['always feel too hot','always feel too cold'],
+  ['win a new car','win a trip around the world']
+];
+const P1Q = [
+  'Tell me about your family.',
+  'What do you usually do after school?',
+  'What is your favourite subject? Why?',
+  'Describe the place where you live.',
+  'What is your favourite food? Who makes it best?',
+  'What do you want to do after SPM?',
+  'Tell me about your best friend.',
+  'Which sport or game do you enjoy? Why?',
+  'How do you usually spend your weekends?',
+  'What is your dream job? Why?',
+  'What do you like most about your school?',
+  'Do you prefer studying alone or with friends? Why?',
+  'What kind of music do you like?',
+  'How do you use your phone every day?',
+  'Which festival do you enjoy most? How do you celebrate it?',
+  'Where would you like to travel one day? Why?',
+  'What is something you are good at?',
+  'What do you do when you feel tired or stressed?',
+  'Tell me about a teacher you like.',
+  'What is the best gift you have ever received?',
+  'How do you help your family at home?',
+  'What is your favourite place in school? Why?',
+  'What did you do last weekend?',
+  'What would you change about your village or town?'
+];
+const P2 = [
+  {t:'A sport or activity you enjoy', p:['what the activity is','when and with whom you do it','why you enjoy it']},
+  {t:'A place in your village or town you are proud of', p:['where it is','what people do there','why it is special to you']},
+  {t:'A person who has helped you', p:['who the person is','how he or she helped you','how you feel about this person']},
+  {t:'Social media: good or bad for teenagers?', p:['how teenagers use it','its good points','its bad points']},
+  {t:'A school event you will never forget', p:['what the event was','what happened','why you remember it']},
+  {t:'Your plans after SPM', p:['what you want to do','how you will prepare','who will support you']},
+  {t:'A skill every teenager should learn', p:['what the skill is','how to learn it','why it is useful']},
+  {t:'Taking care of our forests and rivers', p:['why they are important','problems they face today','what young people can do']}
+];
+const STAND = [
+  'have ever swum in a river','feel a little nervous about SPM','have a younger brother or sister',
+  'woke up before 6 a.m. today','can cook a meal by yourself','have ever caught a fish','love spicy food',
+  'have played in a sports competition','want to continue studying after SPM','have been to Kuala Lumpur',
+  'prefer rainy days to hot days','have a pet at home','can ride a bicycle','spoke English today before this class',
+  'have climbed a hill or a mountain','feel braver now than at the start of class'
+];
+const TENNIS = [
+  'Homework should be banned.','Students should be allowed to bring phones to school.',
+  'Living in a village is better than living in a city.','Sports are more important than exams.',
+  'Every teenager should learn to cook.','School should start at 9 a.m.','Online games are a waste of time.',
+  'Teenagers should have part-time jobs.','Reading books is better than watching videos.',
+  'Every school should have its own farm.','School uniforms should be optional.',
+  'English is the most useful subject in school.'
+];
+const DUEL = [
+  {s:'Your school wants to help Form 5 students feel less stressed before SPM.', q:'How can the school reduce SPM stress?', o:['Sports day','Study camp','Motivational talk','Games night','Gotong-royong']},
+  {s:'Your school has received RM5,000 to make the school a better place.', q:'How should the school spend the money?', o:['Library books','Computer lab','Sports equipment','School garden','Canteen upgrade']},
+  {s:'Your class is planning an end-of-year trip.', q:'Where should the class go?', o:['National park','Beach','Museum in KL','Theme park','Village homestay']},
+  {s:'Your English teacher wants more students to speak English at school.', q:'Which activity will help students speak more English?', o:['English Day','Movie club','Drama contest','English corner','Pen-pal programme']},
+  {s:'Your village wants to become cleaner and greener.', q:'What is the best way to keep the village clean and green?', o:['Recycling bins','Tree planting','River clean-up','Anti-litter posters','Cleanest home award']},
+  {s:'New Form 1 students will join your school next year.', q:'How can we help new Form 1 students feel welcome?', o:['Buddy system','School tour','Welcome party','Fun sports games','Club fair']}
+];
+const MM_POS = [[21,15],[79,15],[16,66],[84,66],[50,88]];
+const JAM = [
+  'My favourite food','Rainy days','My dream house','Mobile phones','The jungle','Football','My best friend',
+  'School holidays','Animals','Music','Money','Festivals','Rivers','Bicycles','My hero','The future',
+  'Cooking','Video games','Friendship','The school canteen'
+];
+const BANNED = [['very','extremely, really, incredibly'],['because','since, as, due to'],['good','excellent, useful, helpful'],['nice','pleasant, lovely, wonderful']];
+const CHECK = ['A clear introduction','At least two points','An example for each point','Linkers (Firstly, In addition…)','A conclusion'];
+const PHRASES = [
+  {k:'Give an opinion', i:'💡', c:'var(--primary)', p:['In my opinion, …','I believe that …','Personally, I think …']},
+  {k:'Agree', i:'👍', c:'var(--good)', p:['I agree with you because …',"That's a good point.",'Exactly! And also …']},
+  {k:'Disagree politely', i:'🤔', c:'var(--hi)', p:['I see your point, but …',"I'm not sure about that.","That's true. However, …"]},
+  {k:'Invite your partner', i:'🫱', c:'var(--t1)', p:['What do you think?','How about you?','Do you agree?']},
+  {k:'Decide together', i:'✅', c:'var(--t2)', p:['So, shall we choose …?','I think the best option is …',"Let's agree on …"]}
+];
+const FISH = [
+  ['🔁','Did they take turns?','Nobody talked for too long.'],
+  ['💬','Did they give reasons?','"…because…"  "For example…"'],
+  ['✅','Did they make a decision?','"So, we agree that…"']
+];
+const TARGET = {
+  p2:{1:{secs:60,text:'Speak for about <b>1 minute</b>. You can look at your team mind map.'},
+      2:{secs:120,text:'Speak for <b>2 minutes</b>. Use at least <b>3 linkers</b>.'},
+      3:{secs:120,text:'Speak for <b>2 minutes</b>. Add a <b>personal story</b>, a <b>question</b> for the listeners and a <b>strong ending</b>.'}},
+  jam:{1:{secs:30,text:'Keep talking for <b>30 seconds</b>. You can do it!'},
+       2:{secs:45,text:'Keep talking for <b>45 seconds</b> with no long pauses.'},
+       3:{secs:60,text:'Talk for <b>60 seconds</b>. No "erm", no repeating!'}},
+  exit:{1:{secs:30,text:'Read one phrase from your card, then finish sentence 2.'},
+        2:{secs:30,text:'Say both sentences clearly.'},
+        3:{secs:30,text:'Say both sentences and explain <b>why</b>.'}}
+};
+const EMOJIS = ['🐯','🦅','🐃','🐘','🦈','🐊','🦉','🐉','⚡','🔥','🌟','🚀'];
+
+/* ---------- Stages ---------- */
+const STAGES = [
+  {label:'Setup', icon:'⚙️', kicker:'Before class', mins:0, steps:[
+    {title:'Build your three teams', render:rSetup, timers:[]}]},
+  {label:'Warm-up', icon:'🎾', kicker:'Warm-up', mins:10, steps:[
+    {title:'Would You Rather? Ball Toss', render:rWarmIntro, timers:[['Warm-up',600]]},
+    {title:'Would you rather…?', render:rWarmPlay, timers:[['Warm-up',600],['Answer',30]]}]},
+  {label:'Part 1', icon:'🗣️', kicker:'Part 1: Interview', mins:15, steps:[
+    {title:'The A-R-E formula', render:rARE, timers:[['Teach',120]]},
+    {title:'Speed Chatting: how it works', render:rSpeedHow, timers:[['Chat',90]]},
+    {title:'Speed Chatting', render:rSpeed, timers:[['Chat',90]]}]},
+  {label:'Part 2', icon:'🧠', kicker:'Part 2: Long turn', mins:30, steps:[
+    {title:'How to build a long turn', render:rStruct, timers:[['Model talk',60],['Teach',180]]},
+    {title:'Mind Map Relay: draw a topic', render:rDraw, timers:[['Mind map',420]]},
+    {title:'Speaking round', render:rSpeak, timers:[['Prep',60],['Short talk',60],['Full talk',120]]}]},
+  {label:'Break', icon:'🧍', kicker:'Brain break', mins:5, steps:[
+    {title:'Stand up if…', render:rStand, timers:[['Break',300]]}]},
+  {label:'Part 3', icon:'⚔️', kicker:'Part 3: Discussion', mins:40, steps:[
+    {title:'Discussion phrase bank', render:rBank, timers:[['Teach',180]]},
+    {title:'Phrase Tennis', render:rTennis, timers:[['Game',420]]},
+    {title:'Decision Duel', render:rDuel, timers:[['Think',60],['Discuss',180]]},
+    {title:'Fishbowl', render:rFish, timers:[['Think',60],['Discuss',180]]}]},
+  {label:'1 Minute', icon:'⏱️', kicker:'Finale', mins:15, steps:[
+    {title:'Just a Minute: the rules', render:rJamRules, timers:[]},
+    {title:'Just a Minute!', render:rJam, timers:[['★',30],['★★',45],['★★★',60]]}]},
+  {label:'Wrap-up', icon:'🏁', kicker:'Wrap-up', mins:5, steps:[
+    {title:'Exit ticket', render:rExit, timers:[['Exit ticket',300]]},
+    {title:'And the champions are…', render:rWinner, timers:[]}]}
+];
+
+/* ---------- State ---------- */
+const KEY = 'speakup-arena-v1', THEME_KEY = 'speakup-arena-theme';
+const $ = (s, el=document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const mem = (n, lv) => ({n, lv, spoke:false, turns:0});
+function freshState(){
+  return {v:1, stage:0, step:0, lessonStart:null, ruleLock:true, muted:false, rotation:1, bags:{}, topics:[null,null,null],
+    teams:[
+      {name:'Harimau', emoji:'🐯', score:0, members:[mem('',3),mem('',2),mem('',2),mem('',1)]},
+      {name:'Enggang', emoji:'🦅', score:0, members:[mem('',3),mem('',2),mem('',2),mem('',1)]},
+      {name:'Seladang', emoji:'🐃', score:0, members:[mem('',3),mem('',2),mem('',2),mem('',1)]}
+    ]};
+}
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(!raw) return null;
+    const s = JSON.parse(raw);
+    if(!s || s.v !== 1 || !Array.isArray(s.teams) || s.teams.length !== 3) return null;
+    if(!s.teams.every(t => Array.isArray(t.members) && t.members.length === 4)) return null;
+    return Object.assign(freshState(), s);
+  }catch(e){ return null; }
+}
+function store(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+let S = load() || freshState();
+if(S.stage >= STAGES.length) S.stage = 0;
+if(S.step >= STAGES[S.stage].steps.length) S.step = 0;
+
+const U = {wyr:null, p1q:null, stand:null, standN:0, tennis:null, duel:null, jamTopic:null,
+  pick:null, pair:null, checks:{}, rally:0, spinning:false, jamDone:false, winnerShown:false, anim:false};
+function resetUI(){ U.pick=null; U.pair=null; U.checks={}; U.rally=0; U.jamDone=false; U.winnerShown=false; U.jamTopic=null; }
+
+const tn = t => (S.teams[t].name || '').trim() || `Team ${t+1}`;
+const memberName = (t,i) => (S.teams[t].members[i].n || '').trim() || (i === 0 ? `${tn(t)} captain` : `${tn(t)} player ${i+1}`);
+const shortName = (t,i) => { const n = (S.teams[t].members[i].n || '').trim(); return n ? n.split(/\s+/)[0].slice(0,8) : (i === 0 ? 'Capt' : 'P' + (i+1)); };
+const stars = l => `${'★'.repeat(l)}<span>${'★'.repeat(3-l)}</span>`;
+const fmt = s => `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
+const curStep = () => STAGES[S.stage].steps[S.step];
+const popc = () => U.anim ? 'pop' : '';
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function draw(key, arr, avoid){
+  let bag = (S.bags[key] || []).filter(i => i < arr.length);
+  if(!bag.length){
+    bag = shuffle(arr.map((_,i) => i));
+    if(bag.length > 1 && bag[bag.length-1] === avoid){ [bag[0], bag[bag.length-1]] = [bag[bag.length-1], bag[0]]; }
+  }
+  const i = bag.pop(); S.bags[key] = bag; store(); U.anim = true; return i;
+}
+
+/* ---------- Sound ---------- */
+let AC = null;
+function unlockAudio(){
+  try{
+    if(!AC){ const C = window.AudioContext || window.webkitAudioContext; if(C) AC = new C(); }
+    if(AC && AC.state === 'suspended') AC.resume();
+  }catch(e){}
+}
+function beep(f=880, d=.18, delay=0, type='sine', vol=.25){
+  if(!AC || S.muted) return;
+  try{
+    const t = AC.currentTime + delay, o = AC.createOscillator(), g = AC.createGain();
+    o.type = type; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t+.01); g.gain.exponentialRampToValueAtTime(0.0001, t+d);
+    o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+d+.03);
+  }catch(e){}
+}
+const chime = () => { beep(784,.12,0,'triangle'); beep(1175,.2,.1,'triangle'); };
+const buzz = () => beep(180,.25,0,'square',.08);
+
+/* ---------- Render: top + stage ---------- */
+function renderTop(){
+  $('#pills').innerHTML = STAGES.map((s,i) =>
+    `<button class="pill ${i===S.stage?'on':''} ${i<S.stage&&i>0?'done':''}" data-a="stage" data-v="${i}" aria-label="${esc(s.label)}"><b aria-hidden="true">${s.icon}</b><span>${esc(s.label)}</span></button>`).join('');
+  $('#muteBtn').textContent = S.muted ? '🔇' : '🔊';
+  $('#themeBtn').textContent = ({auto:'🌓', dark:'🌙', light:'☀️'})[themePref];
+  updateClock();
+  const on = $('.pill.on'); if(on && on.scrollIntoView) on.scrollIntoView({inline:'nearest', block:'nearest'});
+}
+function head(){
+  const st = STAGES[S.stage], sp = st.steps[S.step];
+  const last = S.stage === STAGES.length-1 && S.step === st.steps.length-1;
+  const lastInStage = S.step === st.steps.length-1;
+  const nl = last ? 'Finished' : lastInStage ? `Next: ${STAGES[S.stage+1].label}` : 'Next';
+  const dots = st.steps.length > 1 ? `<div class="dots">${st.steps.map((_,i) => `<button class="dot ${i===S.step?'on':''}" data-a="step" data-v="${i}" aria-label="Step ${i+1}"></button>`).join('')}</div>` : '';
+  return `<div class="shead"><div><div class="kicker">${esc(st.kicker)}${st.mins ? ` <span>(${st.mins} minutes)</span>` : ''}</div><h1>${sp.title}</h1></div>
+    <div class="stepnav">${dots}
+      ${S.stage === 0 ? '' : `<button class="btn" data-a="prev" aria-label="Back">◀</button><button class="btn primary" data-a="next" ${last?'disabled':''}>${nl} ▶</button>`}
+    </div></div>`;
+}
+function renderStage(){
+  $('#main').innerHTML = head() + `<div class="body">${curStep().render()}</div>`;
+  U.anim = false;
+}
+function renderAll(){ renderTop(); renderStage(); renderTeams(); renderTimer(); }
+
+/* ---------- Step renders ---------- */
+function rSetup(){
+  const teams = S.teams.map((t,ti) => {
+    const c = [1,2,3].map(l => t.members.filter(m => m.lv === l).length);
+    const ok = c[0] === 1 && c[1] === 2 && c[2] === 1;
+    return `<div class="tsetup team-${ti}">
+      <div class="tsetup-head">
+        <button class="emoji-btn" data-a="emoji" data-v="${ti}" aria-label="Change team icon">${t.emoji}</button>
+        <input class="tname" type="text" data-f="tname" data-t="${ti}" value="${esc(t.name)}" maxlength="14" aria-label="Team name">
+      </div>
+      ${t.members.map((m,i) => `<div class="mrow">
+        <input type="text" data-f="mname" data-t="${ti}" data-i="${i}" value="${esc(m.n)}" placeholder="${i===0?'Captain name':'Student name'}" maxlength="18" aria-label="Student name">
+        <div class="seg" role="group" aria-label="Challenge level">${[1,2,3].map(l => `<button class="${m.lv===l?'on':''}" data-a="lv" data-v="${ti},${i},${l}" aria-label="${l} star">${'★'.repeat(l)}</button>`).join('')}</div>
+      </div>`).join('')}
+      <div class="balance ${ok?'ok':'no'}">${ok ? '✓ Balanced team' : `Suggested mix: one ★★★, two ★★, one ★`}</div>
+    </div>`;
+  }).join('');
+  return `<p class="note">👀 Fill this in before you mirror to the TV. Stars set each student's challenge level: ★ needs support, ★★ developing, ★★★ team captain. During the lesson, students only see stars.</p>
+    <div class="teams-setup">${teams}</div>
+    <div class="setup-foot">
+      <label class="switch"><input type="checkbox" data-f="lock" ${S.ruleLock?'checked':''}><span>Teams earn points only after every member has spoken</span></label>
+      <div class="grow"></div>
+      <button class="btn" data-a="resetScores">Reset scores</button>
+      <button class="btn danger" data-a="resetAll">Reset everything</button>
+      <button class="btn primary big" data-a="begin">${S.lessonStart ? 'Continue lesson' : 'Start lesson'} ▶</button>
+    </div>
+    <div class="lbl" style="margin-top:14px">Tonight's plan, 2 hours</div>
+    <div class="timeline">${STAGES.slice(1).map(s => `<div class="tl" style="flex-grow:${s.mins}"><b>${s.mins} min</b>${s.icon} ${esc(s.label)}</div>`).join('')}</div>`;
+}
+const rule = (e,t,d) => `<div class="rule"><div class="e">${e}</div><div class="t">${t}</div><p>${d}</p></div>`;
+function rWarmIntro(){
+  return `<div class="grid3">
+      ${rule('🎾','Catch','Catch the ball when it comes to you.')}
+      ${rule('💬','Answer','Answer in a full sentence.')}
+      ${rule('🎯','Throw','Throw it to someone who has not spoken yet.')}
+    </div>
+    <div class="frame-card"><div class="lbl">Say it like this</div><div class="frame">I would rather <span class="blank"></span> because <span class="blank"></span>.</div></div>
+    <div class="tip hi">★★★ challenge: add an example with “For example, …”</div>`;
+}
+function rWarmPlay(){
+  if(U.wyr == null) U.wyr = draw('wyr', WYR);
+  const [a,b] = WYR[U.wyr];
+  return `<div class="wyr">
+      <div class="wyr-q">Would you rather…</div>
+      <div class="wyr-row ${popc()}"><div class="opt team-0">${esc(a)}</div><div class="or">OR</div><div class="opt team-1">${esc(b)}</div></div>
+    </div>
+    <div class="row between">
+      <div class="frame-card sm"><span class="frame">I would rather <span class="blank"></span> because <span class="blank"></span>.</span></div>
+      <button class="btn primary big" data-a="wyrNext">🎲 New question</button>
+    </div>
+    <div class="tip hi">★★★ challenge: add an example with “For example, …”</div>`;
+}
+function rARE(){
+  return `<div class="are">
+      <div class="are-card team-0"><div class="big">A</div><div class="nm">Answer</div><div class="ex">Answer the question.</div></div>
+      <div class="arrow">➜</div>
+      <div class="are-card team-1"><div class="big">R</div><div class="nm">Reason</div><div class="ex">Say why.</div></div>
+      <div class="arrow">➜</div>
+      <div class="are-card team-2"><div class="big">E</div><div class="nm">Example</div><div class="ex">Give an example from your life.</div></div>
+    </div>
+    <div class="are-demo"><span class="lbl" style="display:block">Question: What do you enjoy doing after school?</span>
+      <span class="team-0">I enjoy playing hockey</span> <span class="team-1">because it keeps me fit.</span> <span class="team-2">For example, I train every evening with my friends.</span></div>
+    <div class="tip">A one-word answer is not enough. Every answer needs A + R + E.</div>`;
+}
+const seats = cls => `<div class="seats">${Array.from({length:6}, () => `<div class="seat ${cls}"></div>`).join('')}</div>`;
+function rSpeedHow(){
+  return `<div class="how">
+      <div class="lines">
+        <div class="line a"><div class="lbl">Line A stays in place</div>${seats('team-0')}</div>
+        <div class="line b"><div class="lbl">Line B moves one seat ➜</div>${seats('team-2')}</div>
+      </div>
+      <ol class="steps-list">
+        <li>Sit facing your partner.</li>
+        <li>Line A asks the question on the screen. Line B answers with A-R-E.</li>
+        <li>Swap: Line B asks, Line A answers.</li>
+        <li>When the timer rings, Line B moves one seat.</li>
+      </ol>
+    </div>`;
+}
+function rSpeed(){
+  if(U.p1q == null) U.p1q = draw('p1', P1Q);
+  const done = S.rotation >= 6;
+  return `<div class="two">
+      <div>
+        <div class="rot">Rotation <b>${S.rotation}</b> of 6</div>
+        <div class="qcard ${popc()}">${esc(P1Q[U.p1q])}</div>
+        <div class="row">
+          <button class="btn" data-a="timer" data-v="90">▶ Start 1:30</button>
+          <button class="btn" data-a="p1New">🎲 Different question</button>
+          <button class="btn primary big" data-a="p1Rotate">${done ? 'All six done ▶' : 'Line B moves ➜'}</button>
+          ${S.rotation > 1 ? `<button class="link" data-a="p1Reset">Start again from rotation 1</button>` : ''}
+        </div>
+      </div>
+      <aside class="side">
+        <div class="panel"><div class="lbl">★ Answer helper</div><div class="frame" style="font-size:22px">I <span class="blank"></span> because <span class="blank"></span>.<br>For example, <span class="blank"></span>.</div></div>
+        <div class="panel hi"><div class="lbl">★★★ Banned words: use these instead</div><div class="banned">${BANNED.map(([w,alt]) => `<div><s>${w}</s> ➜ ${alt}</div>`).join('')}</div></div>
+      </aside>
+    </div>`;
+}
+function rStruct(){
+  const FLOW = [
+    ['👋','Introduction','Say what you will talk about.','Today, I would like to talk about…'],
+    ['1️⃣','Point 1','Give a point and an example.','Firstly, … For instance, …'],
+    ['2️⃣','Point 2','Give another point and an example.','In addition, … For example, …'],
+    ['🏁','Conclusion','Finish strongly.','In conclusion, …']
+  ];
+  return `<div class="flow">${FLOW.map(([e,t,x,s]) => `<div class="fcard"><div class="e">${e}</div><div class="t">${t}</div><div class="x">${x}</div><div class="s">${s}</div></div>`).join('')}</div>
+    <div class="lbl" style="margin-top:16px">Linkers to use</div>
+    <div class="linkers">${['Firstly','Secondly','In addition','For instance','For example','On the other hand','However','In conclusion'].map(w => `<span class="chip">${w}</span>`).join('')}</div>
+    <div class="tip">🎤 Model it: a captain gives a 1-minute talk. Everyone, find the four parts!</div>`;
+}
+function topicHTML(k){
+  const tp = P2[k];
+  return `<div class="ttitle">${esc(tp.t)}</div><div class="lbl">You may talk about:</div><ul class="tpoints">${tp.p.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
+}
+function rDraw(){
+  return `<div class="draw3">${S.teams.map((t,ti) => {
+      const k = S.topics[ti];
+      if(k == null) return `<div class="drawcard closed team-${ti}"><div class="tlabel">${t.emoji} ${esc(tn(ti))}</div><button class="btn big teamc team-${ti}" data-a="drawTopic" data-v="${ti}">🃏 Draw a topic</button></div>`;
+      return `<div class="drawcard team-${ti} ${U.flip === ti ? 'flip' : ''}"><div class="tlabel">${t.emoji} ${esc(tn(ti))}</div>${topicHTML(k)}<button class="link" data-a="drawTopic" data-v="${ti}">Draw a different topic</button></div>`;
+    }).join('')}</div>
+    <div class="tip">Build one mind map together on paper: two or three points, each with an example. Everyone in the team will use it.</div>`;
+}
+function picker(ctx){
+  const p = U.pick;
+  const btns = S.teams.map((t,ti) => {
+    const left = t.members.filter(m => !m.spoke).length;
+    return `<button class="btn teamc team-${ti}" data-a="pick" data-v="${ti}">${t.emoji} ${esc(tn(ti))} <small>${left ? left + ' to go' : 'all done'}</small></button>`;
+  }).join('') + `<button class="btn" data-a="pick" data-v="any">🎲 Anyone</button>`;
+  let card;
+  if(!p){
+    card = `<div class="spk empty"><div class="spk-emoji">🎤</div><div>Tap a team to choose the next speaker</div></div>`;
+  }else{
+    const t = S.teams[p.t], m = t.members[p.i], tg = TARGET[ctx][m.lv];
+    card = `<div class="spk team-${p.t} ${popc()}">
+      <div class="spk-team">${t.emoji} ${esc(tn(p.t))}</div>
+      <div class="spk-name">${esc(memberName(p.t,p.i))}</div>
+      <div class="stars">${stars(m.lv)}</div>
+      <div class="spk-target">${tg.text}</div>
+      <div class="row">
+        ${ctx === 'p2' ? `<button class="btn" data-a="timer" data-v="60">⏳ Prepare 1:00</button>` : ''}
+        <button class="btn primary" data-a="timer" data-v="${tg.secs}">▶ Talk ${fmt(tg.secs)}</button>
+        <button class="btn good" data-a="spoke" data-v="${p.t},${p.i}" ${m.spoke?'disabled':''}>${m.spoke ? '✓ Spoken' : '✓ Finished speaking'}</button>
+      </div>
+    </div>`;
+  }
+  return `<div class="picker"><div class="pick-row">${btns}</div>${card}</div>`;
+}
+function topicMini(t){
+  const k = S.topics[t];
+  if(k == null) return `<div class="panel muted">${esc(tn(t))} has no topic yet. Go back one step to draw one.</div>`;
+  return `<div class="panel tmini team-${t}"><div class="lbl">${S.teams[t].emoji} ${esc(tn(t))}'s topic</div>${topicHTML(k)}</div>`;
+}
+function rSpeak(){
+  return `<div class="two">
+      ${picker('p2')}
+      <aside class="side">
+        ${U.pick ? topicMini(U.pick.t) : `<div class="panel muted">The speaker's topic will appear here.</div>`}
+        <div class="panel"><div class="lbl">Listeners: did the speaker include…</div>
+          <ul class="check">${CHECK.map((c,i) => `<li><button class="${U.checks[i]?'on':''}" data-a="check" data-v="${i}"><span class="bx">${U.checks[i]?'✓':''}</span>${c}</button></li>`).join('')}</ul>
+        </div>
+      </aside>
+    </div>`;
+}
+function rStand(){
+  if(U.stand == null){ U.stand = draw('stand', STAND); U.standN = 1; }
+  return `<div class="stand">
+      <div class="stand-kick">🧍 Stand up if you…</div>
+      <div class="stand-q ${popc()}">${esc(STAND[U.stand])}</div>
+      <button class="btn primary big" data-a="standNext">Sit down. Next one ▶</button>
+      <div class="stand-n">Statement ${U.standN}</div>
+    </div>`;
+}
+function rBank(){
+  return `<div class="pbank">${PHRASES.map(g => `<div class="pgroup" style="--pc:${g.c}"><div class="pi">${g.i}</div><div class="pk">${g.k}</div>${g.p.map(x => `<div class="pp">${esc(x)}</div>`).join('')}</div>`).join('')}</div>
+    <div class="tip hi">Phrase cards are allowed tonight. Reading from your card is fine!</div>`;
+}
+function pairHTML(sep){
+  if(!U.pair) return '';
+  return `<div class="vs ${popc()}">${U.pair.map(p => `<span class="pn team-${p.t}">${S.teams[p.t].emoji} ${esc(memberName(p.t,p.i))}</span>`).join(`<i>${sep}</i>`)}</div>`;
+}
+function rTennis(){
+  if(U.tennis == null) U.tennis = draw('tennis', TENNIS);
+  return `<div class="two">
+      <div>
+        <div class="serve">🎾 Serve</div>
+        <div class="qcard ${popc()}">“${esc(TENNIS[U.tennis])}”</div>
+        <div class="row">${pairHTML('VS')}
+          ${U.pair ? `<button class="btn good" data-a="pairSpoke">✓ Both spoke</button>` : ''}
+          <button class="btn" data-a="pair">🎲 ${U.pair ? 'New players' : 'Choose 2 players'}</button>
+        </div>
+        <div class="rally">
+          <div class="rally-n">${U.rally}</div><div class="rally-l">hits in<br>this rally</div>
+          <button class="btn good big" data-a="rally" data-v="1">+1 hit</button>
+          <button class="btn" data-a="rally" data-v="0">Rally over</button>
+          <button class="btn primary big" data-a="tennisNext">New serve ▶</button>
+        </div>
+      </div>
+      <aside class="side">${PHRASES.map(g => `<div class="mp" style="--pc:${g.c}"><b>${g.k}</b><span>${esc(g.p[0])}</span></div>`).join('')}</aside>
+    </div>
+    <div class="tip">Player 1 serves an opinion. Player 2 hits back using a phrase. Silence or no phrase ends the rally.</div>`;
+}
+function mindMap(d){
+  const [cx,cy] = [50,42];
+  return `<div class="mm ${popc()}">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${MM_POS.map(([x,y]) => `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" vector-effect="non-scaling-stroke"/>`).join('')}</svg>
+      <div class="mm-center">${esc(d.q)}</div>
+      ${d.o.map((o,i) => `<div class="mm-opt team-${i%3}" style="left:${MM_POS[i][0]}%;top:${MM_POS[i][1]}%">${esc(o)}</div>`).join('')}
+    </div>`;
+}
+function rDuel(){
+  if(U.duel == null) U.duel = draw('duel', DUEL);
+  const d = DUEL[U.duel];
+  return `<div class="sit">📋 ${esc(d.s)} Discuss the ideas and decide which one is the best.</div>
+    ${mindMap(d)}
+    <div class="row between">
+      <div class="row"><span class="chip">🔁 Take turns</span><span class="chip">💬 Give reasons</span><span class="chip">✅ Decide together</span></div>
+      <div class="row">
+        <button class="btn" data-a="timer" data-v="60">⏳ Think 1:00</button>
+        <button class="btn primary" data-a="timer" data-v="180">▶ Discuss 3:00</button>
+        <button class="btn" data-a="duelNext">🎲 New situation</button>
+      </div>
+    </div>
+    <div class="tip">Pairs: ★★★ with ★, and ★★ with ★★. Change partners for each new situation.</div>`;
+}
+function rFish(){
+  if(U.duel == null) U.duel = draw('duel', DUEL);
+  const d = DUEL[U.duel];
+  return `<div class="fish-top">
+      <div class="panel"><div class="lbl">Performing pair</div>
+        <div class="row">${pairHTML('&')}
+          ${U.pair ? `<button class="btn good" data-a="pairSpoke">✓ Both spoke</button>` : ''}
+          <button class="btn" data-a="pair">🎲 ${U.pair ? 'Another pair' : 'Choose a pair'}</button>
+        </div>
+      </div>
+      <div class="panel minisit"><div class="lbl">Their task</div><div class="q">${esc(d.q)}</div>
+        <div class="optchips">${d.o.map(o => `<span class="chip">${esc(o)}</span>`).join('')}</div>
+        <button class="link" data-a="duelNext">Use a different situation</button>
+      </div>
+    </div>
+    <div class="grid3">${FISH.map(([e,t,x]) => `<div class="crit"><div class="crit-e">${e}</div><div class="crit-t">${t}</div><div class="crit-d">${esc(x)}</div><div class="hands">${[1,2,3,4,5].map(n => `<span>${n}</span>`).join('')}</div></div>`).join('')}</div>
+    <div class="tip">Audience: show 1 to 5 fingers for each question. Points go to the pair's teams on the scoreboard.</div>`;
+}
+function rJamRules(){
+  const x = ['You can do it!','No long pauses.','No "erm", no repeating!'];
+  return `<div class="grid3">${[1,2,3].map(l => `<div class="jam-tier"><div class="stars">${stars(l)}</div><div class="jam-secs">${TARGET.jam[l].secs}<small>s</small></div><div class="x">${x[l-1]}</div></div>`).join('')}</div>
+    <ol class="rules-list">
+      <li>Each team sends one speaker at a time.</li>
+      <li>Spin a topic, then talk until the timer rings.</li>
+      <li>Everyone in your team must take a turn.</li>
+      <li>When a ★★★ speaker says “erm” or repeats, other teams can shout “CHALLENGE!” A correct challenge wins 1 point.</li>
+      <li>Keep talking to the end and your team wins 2 points.</li>
+    </ol>`;
+}
+function rJam(){
+  const p = U.pick, others = p ? [0,1,2].filter(t => t !== p.t) : [];
+  return `<div class="two">
+      ${picker('jam')}
+      <div class="jam-topic">
+        <div class="topic-big ${U.spinning?'spin':''} ${popc()}" id="jamTopic">${U.jamTopic != null ? esc(JAM[U.jamTopic]) : '?'}</div>
+        <button class="btn primary big" data-a="spin" ${U.spinning?'disabled':''}>🎰 Spin a topic</button>
+        ${p ? `<button class="btn good big" data-a="jamWin" ${U.jamDone?'disabled':''}>🏆 Made it! +2 for ${esc(tn(p.t))}</button>
+          <div class="chal"><span>Correct challenge? +1 for</span>${others.map(t => `<button class="btn teamc team-${t}" data-a="jamChal" data-v="${t}">${S.teams[t].emoji} ${esc(tn(t))}</button>`).join('')}</div>` : ''}
+      </div>
+    </div>`;
+}
+function rExit(){
+  return `<div class="two">
+      <div class="exit">
+        <div class="exit-card"><div class="n">1</div><div>One useful phrase I learned tonight is <span class="blank long"></span>.</div></div>
+        <div class="exit-card"><div class="n">2</div><div>In the real SPM speaking test, I will <span class="blank long"></span>.</div></div>
+        <div class="tip hi" style="margin-top:0">★ You can read a phrase from your card. That counts!</div>
+      </div>
+      ${picker('exit')}
+    </div>`;
+}
+function rWinner(){
+  if(!U.winnerShown){
+    return `<div class="reveal"><div class="drum">🥁</div><button class="btn primary huge" data-a="reveal">Reveal the champions</button></div>`;
+  }
+  const order = S.teams.map((t,i) => ({t, i})).sort((a,b) => b.t.score - a.t.score);
+  const rank = x => 1 + S.teams.filter(o => o.score > x.t.score).length;
+  const top = order.filter(x => x.t.score === order[0].t.score);
+  const headline = top.length > 1 ? `It's a tie: ${top.map(x => esc(tn(x.i))).join(' and ')}!` : `${order[0].t.emoji} ${esc(tn(order[0].i))} wins!`;
+  return `<div class="winner">
+      <div class="crown">👑</div>
+      <div class="wname">${headline}</div>
+      <div class="podium">${[order[1], order[0], order[2]].map(x => `<div class="pod team-${x.i} r${rank(x)}">
+        <div class="pe">${x.t.emoji}</div><div class="pn2">${esc(tn(x.i))}</div><div class="ps">${x.t.score} pts</div><div class="block">${rank(x)}</div></div>`).join('')}</div>
+      <p class="thanks">Well done, everyone. That was two hours of speaking English! 🎉</p>
+    </div>`;
+}
+
+/* ---------- Scoreboard ---------- */
+function renderTeams(){
+  $('#teams').innerHTML = S.teams.map((t,ti) => {
+    const left = t.members.filter(m => !m.spoke).length, all = left === 0;
+    return `<div class="tcard team-${ti} ${all?'all':''}" id="tc${ti}">
+      <div class="tc-top"><div class="tc-name">${t.emoji} ${esc(tn(ti))}</div><div class="tc-score" id="ts${ti}">${t.score}</div></div>
+      <div class="mdots">${t.members.map((m,i) => `<button class="md ${m.spoke?'on':''}" data-a="toggleSpoke" data-v="${ti},${i}" aria-label="${esc(memberName(ti,i))}: ${m.spoke?'has spoken':'not yet'}">${esc(shortName(ti,i))}</button>`).join('')}</div>
+      <div class="tc-bot"><div class="tc-flag">${all ? '✓ Everyone spoke' : `${left} still to speak`}</div>
+        <div class="tc-btns"><button class="pm" data-a="pts" data-v="${ti},-1" aria-label="Take away a point">−</button><button class="pm plus" data-a="pts" data-v="${ti},1" aria-label="Add a point">+</button></div>
+      </div>
+    </div>`;
+  }).join('') + `<button class="newround" data-a="newRound">↺<span>New round</span></button>`;
+}
+function addPoints(t, n, force){
+  const team = S.teams[t];
+  if(n > 0 && S.ruleLock && !force && !team.members.every(m => m.spoke)){
+    toast(`🔒 ${tn(t)}: everyone must speak before the team gets points`);
+    buzz();
+    const c = $('#tc'+t); if(c){ c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake'); }
+    return;
+  }
+  team.score = Math.max(0, team.score + n); store(); renderTeams();
+  const s = $('#ts'+t); if(s && n > 0){ s.classList.add('bump'); chime(); }
+}
+function markSpoke(t, i){
+  const m = S.teams[t].members[i];
+  if(m.spoke) return;
+  m.spoke = true; m.turns++; store(); renderTeams();
+  if(S.teams[t].members.every(x => x.spoke)){ toast(`🎉 ${tn(t)}: everyone has spoken. Points are open!`); chime(); }
+}
+function resetRound(auto){
+  S.teams.forEach(t => t.members.forEach(m => m.spoke = false));
+  store(); renderTeams();
+  toast(auto ? 'New stage: everyone starts a new speaking round' : 'New round: everyone can speak again');
+}
+function pickSpeaker(v){
+  const teams = v === 'any' ? [0,1,2] : [+v];
+  let pool = [];
+  teams.forEach(t => S.teams[t].members.forEach((m,i) => { if(!m.spoke) pool.push({t, i, turns:m.turns}); }));
+  if(!pool.length){
+    toast(v === 'any' ? 'Everyone has spoken this round. Tap New round.' : `Everyone in ${tn(+v)} has spoken. Tap New round.`);
+    buzz(); return;
+  }
+  const min = Math.min(...pool.map(p => p.turns));
+  pool = pool.filter(p => p.turns === min);
+  if(pool.length > 1 && U.pick) pool = pool.filter(p => !(p.t === U.pick.t && p.i === U.pick.i));
+  const p = pool[Math.floor(Math.random() * pool.length)];
+  U.pick = {t:p.t, i:p.i}; U.checks = {}; U.jamDone = false; U.jamTopic = null; U.anim = true;
+  beep(520,.08); beep(780,.12,.08);
+  renderStage();
+}
+function pickPair(){
+  const all = [];
+  S.teams.forEach((tm,t) => tm.members.forEach((m,i) => all.push({t, i, s:m.spoke?1:0, turns:m.turns, r:Math.random()})));
+  all.sort((a,b) => a.s - b.s || a.turns - b.turns || a.r - b.r);
+  const a = all[0], b = all.find(x => x.t !== a.t);
+  return [a, b];
+}
+
+/* ---------- Timer ---------- */
+const T = {total:60, left:60, running:false, endAt:0};
+function tSet(secs){ T.total = secs; T.left = secs; T.running = false; renderTimer(); }
+function tStart(){
+  unlockAudio();
+  if(T.left <= 0) T.left = T.total;
+  T.endAt = performance.now() + T.left * 1000; T.running = true;
+  beep(660,.08); renderTimer();
+}
+function tPause(){
+  if(!T.running) return;
+  T.left = Math.max(0, (T.endAt - performance.now()) / 1000); T.running = false; renderTimer();
+}
+function tick(){
+  if(!T.running) return;
+  const l = (T.endAt - performance.now()) / 1000;
+  if(l <= 0){ T.left = 0; T.running = false; renderTimer(); timesUp(); return; }
+  const before = Math.ceil(T.left); T.left = l; const now = Math.ceil(l);
+  if(now !== before && now <= 3) beep(620,.1,0,'triangle',.2);
+  updateTimerDisplay();
+}
+function renderTimer(){
+  const pres = curStep().timers || [];
+  $('#timer').innerHTML = `<div class="tm-top">
+      <div class="tm-digits" id="tmd">0:00</div>
+      <div class="tm-ctrl">
+        <button class="tb main" data-a="tToggle" aria-label="${T.running?'Pause':'Start'} timer">${T.running?'❚❚':'▶'}</button>
+        <button class="tb" data-a="tReset" aria-label="Reset timer">↺</button>
+        <button class="tb" data-a="bigOpen" aria-label="Show big timer">⛶</button>
+      </div>
+    </div>
+    <div class="tm-bar"><i id="tmb"></i></div>
+    <div class="tm-presets">
+      <button class="chip" data-a="tAdd">+30s</button>
+      ${pres.map(([l,s]) => `<button class="chip ${T.total===s?'on':''}" data-a="tPreset" data-v="${s}">${esc(l)} ${fmt(s)}</button>`).join('')}
+    </div>`;
+  const bt = $('#bigToggle'); if(bt) bt.textContent = T.running ? '❚❚ Pause' : '▶ Start';
+  updateTimerDisplay();
+}
+function updateTimerDisplay(){
+  const secs = Math.max(0, Math.ceil(T.left));
+  const txt = fmt(secs), pct = T.total ? Math.max(0, Math.min(100, T.left / T.total * 100)) : 0;
+  const low = T.running && secs <= 10 && T.total >= 20;
+  const d = $('#tmd'); if(d) d.textContent = txt;
+  const b = $('#tmb'); if(b) b.style.width = pct + '%';
+  $('#timer').classList.toggle('low', low);
+  $('#bigd').textContent = txt;
+  $('#bigb').style.width = pct + '%';
+  $('#bigT').classList.toggle('low', low || (secs === 0 && T.total > 0));
+}
+function timesUp(){
+  beep(880,.2,0,'square',.15); beep(660,.2,.25,'square',.15); beep(880,.35,.5,'square',.15);
+  const o = $('#timesup'); o.classList.add('show');
+  clearTimeout(timesUp.h); timesUp.h = setTimeout(() => o.classList.remove('show'), 2600);
+}
+function applyStepTimers(){
+  const p = curStep().timers || [];
+  if(!T.running && p.length) tSet(p[0][1]); else renderTimer();
+}
+setInterval(tick, 100);
+
+/* ---------- Clock, theme, fullscreen, wake lock ---------- */
+const hm = m => `${Math.floor(m/60)}:${String(Math.floor(m%60)).padStart(2,'0')}`;
+function updateClock(){
+  const el = $('#clock');
+  if(!S.lessonStart){ el.textContent = '⏱ Lesson not started'; el.className = 'clock'; return; }
+  const mins = (Date.now() - S.lessonStart) / 60000;
+  let planned = 0; for(let k = 1; k <= S.stage; k++) planned += STAGES[k].mins;
+  const behind = Math.floor(mins - planned);
+  const late = S.stage > 0 && behind >= 2;
+  el.textContent = `⏱ ${hm(mins)} of 2:00` + (late ? `, ${behind} min behind plan` : '');
+  el.className = 'clock' + (late ? ' behind' : '');
+}
+setInterval(updateClock, 1000);
+
+let themePref = 'auto';
+try{ themePref = localStorage.getItem(THEME_KEY) || 'auto'; }catch(e){}
+function applyTheme(){
+  if(themePref === 'auto') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme', themePref);
+}
+applyTheme();
+
+function toggleFS(){
+  const d = document, el = d.documentElement;
+  const fail = () => toast('Full screen is not available here. Rotate the iPad and hide the toolbars instead.');
+  try{
+    if(d.fullscreenElement || d.webkitFullscreenElement){ (d.exitFullscreen || d.webkitExitFullscreen).call(d); return; }
+    const req = el.requestFullscreen || el.webkitRequestFullscreen;
+    if(!req) return fail();
+    const r = req.call(el);
+    if(r && r.catch) r.catch(fail);
+  }catch(e){ fail(); }
+}
+let wake = null;
+async function requestWake(){
+  try{
+    if('wakeLock' in navigator && !wake){
+      wake = await navigator.wakeLock.request('screen');
+      wake.addEventListener('release', () => { wake = null; });
+    }
+  }catch(e){}
+}
+document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible' && S.lessonStart) requestWake(); });
+
+/* ---------- Toast, confetti ---------- */
+let toastH;
+function toast(msg){
+  const el = $('#toast'); el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastH); toastH = setTimeout(() => el.classList.remove('show'), 2600);
+}
+let parts = [], confRunning = false;
+function confetti(n=160){
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c = $('#confetti'), dpr = window.devicePixelRatio || 1;
+  c.width = innerWidth * dpr; c.height = innerHeight * dpr;
+  const cs = getComputedStyle(document.documentElement);
+  const cols = ['--t0','--t1','--t2','--hi','--good'].map(v => cs.getPropertyValue(v).trim() || '#FFC531');
+  for(let k = 0; k < n; k++){
+    parts.push({x:Math.random()*c.width, y:-Math.random()*c.height*.4, vx:(Math.random()-.5)*6*dpr, vy:(2+Math.random()*5)*dpr,
+      s:(7+Math.random()*9)*dpr, r:Math.random()*6, vr:(Math.random()-.5)*.3, col:cols[k % cols.length]});
+  }
+  if(confRunning) return;
+  confRunning = true;
+  const ctx = c.getContext('2d');
+  (function frame(){
+    ctx.clearRect(0,0,c.width,c.height);
+    parts.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.vy += .07 * dpr; p.r += p.vr;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle = p.col; ctx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2); ctx.restore();
+    });
+    parts = parts.filter(p => p.y < c.height + 40);
+    if(parts.length) requestAnimationFrame(frame);
+    else { ctx.clearRect(0,0,c.width,c.height); confRunning = false; }
+  })();
+}
+
+/* ---------- Navigation ---------- */
+function go(stage, step){
+  stage = Math.max(0, Math.min(STAGES.length-1, stage));
+  step = Math.max(0, Math.min(STAGES[stage].steps.length-1, step));
+  const prev = S.stage, changed = stage !== S.stage || step !== S.step;
+  S.stage = stage; S.step = step;
+  if(stage > prev && prev > 0) resetRound(true);
+  if(changed) resetUI();
+  store(); renderTop(); renderStage();
+  if(changed) applyStepTimers(); else renderTimer();
+  $('#main').scrollTop = 0;
+}
+function nextStep(){
+  const st = STAGES[S.stage];
+  if(S.step < st.steps.length-1) go(S.stage, S.step+1);
+  else if(S.stage < STAGES.length-1) go(S.stage+1, 0);
+}
+function prevStep(){
+  if(S.step > 0) go(S.stage, S.step-1);
+  else if(S.stage > 0) go(S.stage-1, STAGES[S.stage-1].steps.length-1);
+}
+function confirmTap(b, fn){
+  if(b.dataset.armed){ fn(); return; }
+  const orig = b.innerHTML; b.dataset.armed = '1'; b.textContent = 'Tap again to confirm';
+  setTimeout(() => { if(b.isConnected){ delete b.dataset.armed; b.innerHTML = orig; } }, 3000);
+}
+function spinTopic(){
+  if(U.spinning) return;
+  U.spinning = true; renderStage();
+  const final = draw('jam', JAM, U.jamTopic);
+  let n = 0;
+  const iv = setInterval(() => {
+    n++;
+    const el = $('#jamTopic'); if(el) el.textContent = JAM[Math.floor(Math.random() * JAM.length)];
+    beep(380 + n*25, .03, 0, 'square', .05);
+    if(n >= 16){
+      clearInterval(iv); U.spinning = false; U.jamTopic = final; U.anim = true;
+      if(curStep().render === rJam) renderStage();
+      chime();
+    }
+  }, 75);
+}
+function revealWinner(){
+  for(let k = 0; k < 14; k++) beep(110 + (k%2)*30, .07, k*.1, 'triangle', .3);
+  const b = $('[data-a="reveal"]'); if(b) b.disabled = true;
+  setTimeout(() => {
+    U.winnerShown = true;
+    if(curStep().render === rWinner) renderStage();
+    beep(523,.15,0,'triangle'); beep(659,.15,.15,'triangle'); beep(784,.15,.3,'triangle'); beep(1047,.4,.45,'triangle');
+    confetti(240);
+  }, 1500);
+}
+
+/* ---------- Actions ---------- */
+const A = {
+  stage: v => go(+v, 0),
+  step: v => go(S.stage, +v),
+  next: nextStep,
+  prev: prevStep,
+  begin: () => { if(!S.lessonStart) S.lessonStart = Date.now(); requestWake(); go(1, 0); },
+  clock: (v,b) => {
+    if(!S.lessonStart){ S.lessonStart = Date.now(); store(); updateClock(); toast('Lesson clock started'); return; }
+    confirmTap(b, () => { S.lessonStart = Date.now(); store(); updateClock(); toast('Lesson clock restarted'); });
+  },
+  lv: v => { const [t,i,l] = v.split(',').map(Number); S.teams[t].members[i].lv = l; store(); renderStage(); },
+  emoji: v => { const t = S.teams[+v]; t.emoji = EMOJIS[(EMOJIS.indexOf(t.emoji) + 1) % EMOJIS.length]; store(); renderStage(); renderTeams(); },
+  resetScores: (v,b) => confirmTap(b, () => { S.teams.forEach(t => t.score = 0); store(); renderTeams(); renderStage(); toast('Scores reset to 0'); }),
+  resetAll: (v,b) => confirmTap(b, () => {
+    S = freshState(); resetUI(); U.wyr = U.p1q = U.stand = U.tennis = U.duel = null;
+    store(); renderAll(); applyStepTimers(); toast('Everything reset');
+  }),
+  pts: v => { const [t,n] = v.split(',').map(Number); addPoints(t, n); },
+  toggleSpoke: v => {
+    const [t,i] = v.split(',').map(Number), m = S.teams[t].members[i];
+    if(m.spoke){ m.spoke = false; m.turns = Math.max(0, m.turns-1); store(); renderTeams(); }
+    else markSpoke(t, i);
+    if(S.stage !== 0) renderStage();
+  },
+  newRound: () => { resetRound(false); if(S.stage !== 0) renderStage(); },
+  tToggle: () => T.running ? tPause() : tStart(),
+  tReset: () => { T.running = false; T.left = T.total; renderTimer(); },
+  tAdd: () => {
+    const cur = T.running ? (T.endAt - performance.now()) / 1000 : T.left;
+    if(T.running) T.endAt += 30000; else T.left += 30;
+    T.total = Math.max(T.total, cur + 30); renderTimer();
+  },
+  tPreset: v => tSet(+v),
+  timer: v => { tSet(+v); tStart(); },
+  bigOpen: () => { $('#bigT').classList.add('show'); updateTimerDisplay(); },
+  bigClose: () => $('#bigT').classList.remove('show'),
+  tuClose: () => $('#timesup').classList.remove('show'),
+  wyrNext: () => { U.wyr = draw('wyr', WYR, U.wyr); beep(700,.06); renderStage(); },
+  p1New: () => { U.p1q = draw('p1', P1Q, U.p1q); renderStage(); },
+  p1Rotate: () => {
+    if(S.rotation >= 6){ nextStep(); return; }
+    S.rotation++; U.p1q = draw('p1', P1Q, U.p1q); store(); renderStage();
+    tSet(90); tStart(); toast(`Line B moves! Rotation ${S.rotation}`);
+  },
+  p1Reset: () => { S.rotation = 1; store(); renderStage(); },
+  drawTopic: v => {
+    const t = +v, others = S.topics.filter((x,k) => k !== t && x != null);
+    let i, tries = 0;
+    do { i = draw('p2', P2, S.topics[t]); tries++; } while(others.includes(i) && tries < 12);
+    S.topics[t] = i; store(); U.flip = t; chime(); renderStage(); U.flip = null;
+  },
+  pick: v => pickSpeaker(v),
+  spoke: v => { const [t,i] = v.split(',').map(Number); markSpoke(t, i); renderStage(); },
+  check: v => { U.checks[v] = !U.checks[v]; if(U.checks[v]) beep(900,.06); renderStage(); },
+  standNext: () => { U.stand = draw('stand', STAND, U.stand); U.standN++; beep(600,.06); renderStage(); },
+  pair: () => { U.pair = pickPair(); U.anim = true; beep(520,.08); beep(780,.12,.08); renderStage(); },
+  pairSpoke: () => { if(U.pair) U.pair.forEach(p => markSpoke(p.t, p.i)); renderStage(); },
+  rally: v => { if(+v){ U.rally++; beep(500 + U.rally*40, .08, 0, 'triangle'); } else { U.rally = 0; buzz(); } renderStage(); },
+  tennisNext: () => { U.tennis = draw('tennis', TENNIS, U.tennis); U.rally = 0; U.pair = null; renderStage(); },
+  duelNext: () => { U.duel = draw('duel', DUEL, U.duel); U.pair = null; renderStage(); },
+  spin: () => spinTopic(),
+  jamWin: () => {
+    const p = U.pick; if(!p || U.jamDone) return;
+    U.jamDone = true; markSpoke(p.t, p.i); addPoints(p.t, 2, true); confetti(90); renderStage();
+  },
+  jamChal: v => { addPoints(+v, 1, true); toast(`Correct challenge: +1 for ${tn(+v)}`); },
+  reveal: () => revealWinner(),
+  mute: () => { S.muted = !S.muted; store(); renderTop(); },
+  theme: () => {
+    themePref = ({auto:'dark', dark:'light', light:'auto'})[themePref] || 'auto';
+    try{ localStorage.setItem(THEME_KEY, themePref); }catch(e){}
+    applyTheme(); renderTop();
+    toast(({auto:'Colours follow the iPad setting', dark:'Dark colours', light:'Light colours'})[themePref]);
+  },
+  fs: () => toggleFS()
+};
+
+document.addEventListener('pointerdown', () => { unlockAudio(); if(S.lessonStart && !wake) requestWake(); });
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-a]');
+  if(!b || b.disabled) return;
+  const fn = A[b.dataset.a];
+  if(fn) fn(b.dataset.v, b);
+});
+document.addEventListener('input', e => {
+  const el = e.target, f = el.dataset.f;
+  if(f === 'tname') S.teams[+el.dataset.t].name = el.value;
+  else if(f === 'mname') S.teams[+el.dataset.t].members[+el.dataset.i].n = el.value;
+  else return;
+  store(); renderTeams();
+});
+document.addEventListener('change', e => {
+  if(e.target.dataset.f === 'lock'){
+    S.ruleLock = e.target.checked; store();
+    toast(S.ruleLock ? 'Points now need every team member to speak first' : 'Points can be given at any time');
+  }
+});
+document.addEventListener('keydown', e => {
+  if(e.target.matches && e.target.matches('input, textarea')) return;
+  if(e.key === 'ArrowRight') nextStep();
+  else if(e.key === 'ArrowLeft') prevStep();
+  else if(e.key === ' '){ e.preventDefault(); A.tToggle(); }
+  else if(e.key === 'Escape'){ A.bigClose(); A.tuClose(); }
+});
+
+renderAll();
+applyStepTimers();
+})();
+</script>
+</body>
+</html>
